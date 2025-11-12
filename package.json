@@ -1,29 +1,29 @@
 {
   "name": "electrolog-app",
   "version": "1.0.0",
-  "description": "Aplikasi desktop untuk akses ElectroLogIXS XP4",
+  "description": "Aplikasi desktop ElectroLogIXS XP4",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-packager . Electrolog --platform=win32 --arch=x64 --out=dist --icon=build/icon.ico --overwrite",
+    "dist": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.electrolog.app",
+    "productName": "ElectroLogIXS",
+    "win": {
+      "icon": "build/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^38.1.2",
+    "electron-packager": "^17.1.1",
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
     "axios": "^1.12.2",
-    "cheerio": "^1.1.2",
-    "electron": "^38.1.2",
-    "ping": "^0.4.4",
-    "puppeteer": "^24.22.0",
-    "qs": "^6.14.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fitri25okt/Electrolog.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fitri25okt/Electrolog/issues"
-  },
-  "homepage": "https://github.com/fitri25okt/Electrolog#readme"
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
 }
